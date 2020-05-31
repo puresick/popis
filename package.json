@@ -61,12 +61,6 @@
 			"target": [
 				{
 					"target": "AppImage"
-				},
-				{
-					"target": "tar.gz"
-				},
-				{
-					"target": "pacman"
 				}
 			],
 			"category": "Utility",
