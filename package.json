@@ -11,7 +11,7 @@
 		"app:gnome": "npm run build && gjs wrapper/gnome.js",
 		"app:gnome:build": "npm run build && cp wrapper/gnome.js bin/popis-gnome && chmod +x bin/popis-gnome",
 		"app:electron:run": "npm run build && NODE_ENV=development electron wrapper/electron.js",
-		"app:electron:build": "npm run build && NODE_ENV=production npx electron-builder build",
+		"app:electron:build": "npm run build && NODE_ENV=production npx electron-builder build --publish=never",
 		"postinstall": "electron-builder install-app-deps",
 		"clean": "rm -rf ./dist; rm -rf ./dist_electron"
 	},
@@ -61,12 +61,6 @@
 			"target": [
 				{
 					"target": "AppImage"
-				},
-				{
-					"target": "tar.gz"
-				},
-				{
-					"target": "pacman"
 				}
 			],
 			"category": "Utility",
