@@ -1,0 +1,81 @@
+{
+	"name": "popis",
+	"version": "0.0.1",
+	"description": "Application to quickly write down short notes",
+	"scripts": {
+		"dev": "npx parcel src/index.html",
+		"dev:nocache": "npx parcel src/index.html --no-cache",
+		"build": "NODE_ENV=production npx parcel build src/index.html --public-url .",
+		"lint": "npx eslint src/",
+		"lint:fix": "npx eslint --fix src/",
+		"app:gnome": "npm run build && gjs wrapper/gnome.js",
+		"app:gnome:build": "npm run build && cp wrapper/gnome.js bin/popis-gnome && chmod +x bin/popis-gnome",
+		"app:electron:run": "npm run build && NODE_ENV=development electron wrapper/electron.js",
+		"app:electron:build": "npm run build && NODE_ENV=production npx electron-builder build",
+		"postinstall": "electron-builder install-app-deps",
+		"clean": "rm -rf ./dist; rm -rf ./dist_electron"
+	},
+	"author": {
+		"name": "puresick",
+		"email": "2714266+puresick@users.noreply.github.com"
+	},
+	"license": "MIT",
+	"devDependencies": {
+		"@babel/core": "^7.9.0",
+		"@babel/plugin-transform-runtime": "^7.9.0",
+		"@vue/component-compiler-utils": "^3.1.2",
+		"autoprefixer": "^9.7.6",
+		"electron": "^8.2.3",
+		"electron-builder": "^22.5.1",
+		"eslint": "^6.8.0",
+		"eslint-plugin-vue": "^6.2.2",
+		"parcel-bundler": "^1.12.4",
+		"tailwindcss": "^1.4.5",
+		"vue-template-compiler": "^2.6.11"
+	},
+	"dependencies": {
+		"@babel/runtime": "^7.9.2",
+		"pouchdb": "^7.2.1",
+		"vue": "^2.6.11",
+		"vue-feather-icons": "^5.0.0",
+		"vue-hot-reload-api": "^2.3.4",
+		"vue-i18n": "^8.17.1",
+		"vue-router": "^3.1.6",
+		"vuex": "^3.1.3"
+	},
+	"main": "wrapper/electron.js",
+	"build": {
+		"appId": "dev.hnnng.popis",
+		"productName": "popis",
+		"directories": {
+			"buildResources": "statics",
+			"output": "dist_electron"
+		},
+		"files": [
+			"dist/**/*",
+			"wrapper/electron.js",
+			"statics/**/*",
+			"statics/icon.icns"
+		],
+		"linux": {
+			"target": [
+				{
+					"target": "AppImage"
+				},
+				{
+					"target": "tar.gz"
+				},
+				{
+					"target": "pacman"
+				}
+			],
+			"category": "Utility",
+			"desktop": {
+				"Encoding": "UTF-8",
+				"Version": "0.0.1",
+				"Type": "Application",
+				"Name": "popis"
+			}
+		}
+	}
+}

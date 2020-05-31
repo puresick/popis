@@ -1,0 +1,34 @@
+{
+	"name": "popis",
+	"short_name": "popis",
+	"description": "Application to quickly write down short notes",
+	"icons": [
+		{
+			"src": "../statics/Icon-512x512.png",
+			"sizes": "48x48"
+		},
+		{
+			"src": "../statics/Icon-512x512.png",
+			"sizes": "72x72"
+		},
+		{
+			"src": "../statics/Icon-512x512.png",
+			"sizes": "96x96"
+		},
+		{
+			"src": "../statics/Icon-512x512.png",
+			"sizes": "144x144"
+		},
+		{
+			"src": "../statics/Icon-512x512.png",
+			"sizes": "168x168"
+		},
+		{
+			"src": "../statics/Icon-512x512.png",
+			"sizes": "192x192"
+		}
+	],
+	"display": "fullscreen",
+	"theme_color": "#edf2f7",
+	"background_color": "#edf2f7"
+}

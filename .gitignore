@@ -1,0 +1,14 @@
+node_modules
+dist
+dist_electron
+.cache
+aclocal.m4
+autom4te.cache
+config.log
+config.status
+configure
+popis.desktop
+install-sh
+missing
+Makefile.in
+Makefile
