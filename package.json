@@ -19,7 +19,7 @@
 		"name": "puresick",
 		"email": "2714266+puresick@users.noreply.github.com"
 	},
-	"license": "MIT",
+	"license": "GNU GPLv3",
 	"devDependencies": {
 		"@babel/core": "^7.9.0",
 		"@babel/plugin-transform-runtime": "^7.9.0",
